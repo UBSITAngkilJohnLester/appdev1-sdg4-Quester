@@ -1,1 +1,15 @@
-<p>progit1-info works!</p>
+<div style="padding: 20px;">
+  <h2>Programming Lessons</h2>
+  <p>Select a lesson to get started.</p>
+
+  @for (lesson of lessons; track lesson.id) {
+    <div class="card text-white bg-primary mb-3"
+      style="max-width: 30rem; cursor: pointer;"
+      [routerLink]="['/learn', 'progit', lesson.id]">
+      <div class="card-body">
+        <h5 class="card-title">{{ lesson.title }}</h5>
+        <p class="card-text">{{ lesson.description }}</p>
+      </div>
+    </div>
+  }
+</div>
