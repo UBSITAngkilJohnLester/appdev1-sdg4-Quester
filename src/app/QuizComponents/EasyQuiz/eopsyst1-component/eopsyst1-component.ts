@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-eopsyst1-component',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './eopsyst1-component.html',
   styleUrl: './eopsyst1-component.css',
 })
