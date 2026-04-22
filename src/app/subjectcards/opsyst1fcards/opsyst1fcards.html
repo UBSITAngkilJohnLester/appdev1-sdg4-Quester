@@ -1,1 +1,173 @@
-<p>opsyst1fcards works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flashcards No JS</title>
+
+<style>
+body {
+  font-family: Arial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* hide inputs */
+input {
+  display: none;
+}
+
+/* END toggle */
+#end:checked ~ .app {
+  display: none;
+}
+
+/* BIGGER DECK */
+.deck {
+  position: relative;
+  width: 600px;   /* increased */
+  height: 350px;  /* increased */
+  margin: 40px 0;
+  perspective: 1000px;
+}
+
+/* card */
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* STACK STATES */
+#s1:checked ~ .app .c1 { transform: translateY(0); z-index: 3; pointer-events:auto;}
+#s1:checked ~ .app .c2 { transform: translateY(20px); z-index: 2; }
+#s1:checked ~ .app .c3 { transform: translateY(40px); z-index: 1; }
+
+#s2:checked ~ .app .c2 { transform: translateY(0); z-index: 3; pointer-events:auto;}
+#s2:checked ~ .app .c3 { transform: translateY(20px); z-index: 2; }
+#s2:checked ~ .app .c1 { transform: translateY(40px); z-index: 1; }
+
+#s3:checked ~ .app .c3 { transform: translateY(0); z-index: 3; pointer-events:auto;}
+#s3:checked ~ .app .c1 { transform: translateY(20px); z-index: 2; }
+#s3:checked ~ .app .c2 { transform: translateY(40px); z-index: 1; }
+
+/* flip */
+.inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip:checked + .card .inner {
+  transform: rotateY(180deg);
+}
+
+/* FIXED EDITABLE AREA */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+
+  /* KEY FIXES */
+  display: block;              /* instead of flex */
+  text-align: left;            /* not centered */
+  overflow-y: auto;            /* scroll if long */
+  word-break: break-word;      /* wrap text */
+
+  backface-visibility: hidden;
+  background: white;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* make editing feel like a textbox */
+.front:focus, .back:focus {
+  outline: 2px solid #4CAF50;
+  background: #fff;
+}
+
+/* editable cursor */
+.front[contenteditable],
+.back[contenteditable] {
+  cursor: text;
+}
+
+/* back side */
+.back {
+  transform: rotateY(180deg);
+  background: #f0f0f0;
+}
+
+/* buttons */
+.controls label {
+  margin: 5px;
+  padding: 12px 18px;
+  background: #ddd;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- STEP STATE -->
+<input type="radio" name="step" id="s1" checked>
+<input type="radio" name="step" id="s2">
+<input type="radio" name="step" id="s3">
+
+<!-- END -->
+<input type="checkbox" id="end">
+
+<div class="app">
+
+  <div class="deck">
+
+    <!-- CARD 1 -->
+    <input type="checkbox" id="f1" class="flip">
+    <label for="f1" class="card c1">
+      <div class="inner">
+        <div class="front" contenteditable="true">Edit question 1</div>
+        <div class="back" contenteditable="true">Edit answer 1</div>
+      </div>
+    </label>
+
+    <!-- CARD 2 -->
+    <input type="checkbox" id="f2" class="flip">
+    <label for="f2" class="card c2">
+      <div class="inner">
+        <div class="front" contenteditable="true">Edit question 2</div>
+        <div class="back" contenteditable="true">Edit answer 2</div>
+      </div>
+    </label>
+
+    <!-- CARD 3 -->
+    <input type="checkbox" id="f3" class="flip">
+    <label for="f3" class="card c3">
+      <div class="inner">
+        <div class="front" contenteditable="true">Edit question 3</div>
+        <div class="back" contenteditable="true">Edit answer 3</div>
+      </div>
+    </label>
+
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <!-- PREVIOUS -->
+    <label for="s1">Prev</label>
+    <label for="s2">Next</label>
+    <label for="end">End</label>
+  </div>
+
+</div>
+
+</body>
+</html>

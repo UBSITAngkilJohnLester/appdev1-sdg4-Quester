@@ -17,57 +17,55 @@ input {
   display: none;
 }
 
-/* END */
+/* END toggle */
 #end:checked ~ .app {
   display: none;
 }
 
-/* DECK (bigger) */
+/* BIGGER DECK */
 .deck {
   position: relative;
-  width: 600px;
-  height: 350px;
+  width: 600px;   /* increased */
+  height: 350px;  /* increased */
   margin: 40px 0;
   perspective: 1000px;
 }
 
-/* CARD */
+/* card */
 .card {
   position: absolute;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
-/* STACKING */
-#s1:checked ~ .app .c1 { transform: translateY(0); z-index: 3; }
+/* STACK STATES */
+#s1:checked ~ .app .c1 { transform: translateY(0); z-index: 3; pointer-events:auto;}
 #s1:checked ~ .app .c2 { transform: translateY(20px); z-index: 2; }
 #s1:checked ~ .app .c3 { transform: translateY(40px); z-index: 1; }
 
-#s2:checked ~ .app .c2 { transform: translateY(0); z-index: 3; }
+#s2:checked ~ .app .c2 { transform: translateY(0); z-index: 3; pointer-events:auto;}
 #s2:checked ~ .app .c3 { transform: translateY(20px); z-index: 2; }
 #s2:checked ~ .app .c1 { transform: translateY(40px); z-index: 1; }
 
-#s3:checked ~ .app .c3 { transform: translateY(0); z-index: 3; }
+#s3:checked ~ .app .c3 { transform: translateY(0); z-index: 3; pointer-events:auto;}
 #s3:checked ~ .app .c1 { transform: translateY(20px); z-index: 2; }
 #s3:checked ~ .app .c2 { transform: translateY(40px); z-index: 1; }
 
-/* INNER FLIP */
+/* flip */
 .inner {
   width: 100%;
   height: 100%;
   position: relative;
-  transform-style: preserve-3d;
   transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
-/* FLIP when active */
-#s1:checked ~ .app .c1 .inner,
-#s2:checked ~ .app .c2 .inner,
-#s3:checked ~ .app .c3 .inner {
+.flip:checked + .card .inner {
   transform: rotateY(180deg);
 }
 
-/* CARD SIDES */
+/* FIXED EDITABLE AREA */
 .front, .back {
   position: absolute;
   width: 100%;
@@ -76,34 +74,37 @@ input {
   border-radius: 12px;
   padding: 20px;
 
-  display: block;
-  text-align: left;
-  overflow-y: auto;
-  word-break: break-word;
+  /* KEY FIXES */
+  display: block;              /* instead of flex */
+  text-align: left;            /* not centered */
+  overflow-y: auto;            /* scroll if long */
+  word-break: break-word;      /* wrap text */
 
   backface-visibility: hidden;
   background: white;
-
   font-size: 18px;
   line-height: 1.4;
 }
 
-/* EDITABLE FEEL */
+/* make editing feel like a textbox */
 .front:focus, .back:focus {
   outline: 2px solid #4CAF50;
+  background: #fff;
 }
 
-/* BACK */
+/* editable cursor */
+.front[contenteditable],
+.back[contenteditable] {
+  cursor: text;
+}
+
+/* back side */
 .back {
   transform: rotateY(180deg);
   background: #f0f0f0;
 }
 
-/* BUTTONS */
-.controls {
-  margin-top: 10px;
-}
-
+/* buttons */
 .controls label {
   margin: 5px;
   padding: 12px 18px;
@@ -112,22 +113,12 @@ input {
   display: inline-block;
   border-radius: 6px;
 }
-
-/* STATE-BASED BUTTONS */
-.state {
-  display: none;
-}
-
-#s1:checked ~ .app .s1 { display: block; }
-#s2:checked ~ .app .s2 { display: block; }
-#s3:checked ~ .app .s3 { display: block; }
-
 </style>
 </head>
 
 <body>
 
-<!-- STATES -->
+<!-- STEP STATE -->
 <input type="radio" name="step" id="s1" checked>
 <input type="radio" name="step" id="s2">
 <input type="radio" name="step" id="s3">
@@ -140,67 +131,40 @@ input {
   <div class="deck">
 
     <!-- CARD 1 -->
-    <div class="card c1">
+    <input type="checkbox" id="f1" class="flip">
+    <label for="f1" class="card c1">
       <div class="inner">
-        <div class="front" contenteditable="true">
-          Edit question 1
-        </div>
-        <div class="back" contenteditable="true">
-          Edit answer 1
-        </div>
+        <div class="front" contenteditable="true">Edit question 1</div>
+        <div class="back" contenteditable="true">Edit answer 1</div>
       </div>
-    </div>
+    </label>
 
     <!-- CARD 2 -->
-    <div class="card c2">
+    <input type="checkbox" id="f2" class="flip">
+    <label for="f2" class="card c2">
       <div class="inner">
-        <div class="front" contenteditable="true">
-          Edit question 2
-        </div>
-        <div class="back" contenteditable="true">
-          Edit answer 2
-        </div>
+        <div class="front" contenteditable="true">Edit question 2</div>
+        <div class="back" contenteditable="true">Edit answer 2</div>
       </div>
-    </div>
+    </label>
 
     <!-- CARD 3 -->
-    <div class="card c3">
+    <input type="checkbox" id="f3" class="flip">
+    <label for="f3" class="card c3">
       <div class="inner">
-        <div class="front" contenteditable="true">
-          Edit question 3
-        </div>
-        <div class="back" contenteditable="true">
-          Edit answer 3
-        </div>
+        <div class="front" contenteditable="true">Edit question 3</div>
+        <div class="back" contenteditable="true">Edit answer 3</div>
       </div>
-    </div>
+    </label>
 
   </div>
 
   <!-- CONTROLS -->
   <div class="controls">
-
-    <!-- STATE 1 -->
-    <div class="state s1">
-      <label for="s3">Previous</label>
-      <label for="s2">Next</label>
-      <label for="end">End</label>
-    </div>
-
-    <!-- STATE 2 -->
-    <div class="state s2">
-      <label for="s1">Previous</label>
-      <label for="s3">Next</label>
-      <label for="end">End</label>
-    </div>
-
-    <!-- STATE 3 -->
-    <div class="state s3">
-      <label for="s2">Previous</label>
-      <label for="s1">Next</label>
-      <label for="end">End</label>
-    </div>
-
+    <!-- PREVIOUS -->
+    <label for="s1">Prev</label>
+    <label for="s2">Next</label>
+    <label for="end">End</label>
   </div>
 
 </div>
