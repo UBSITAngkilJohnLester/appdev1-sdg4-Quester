@@ -2,138 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Flashcard Stack</title>
+<title>CSS Flashcards</title>
 
 <style>
-  body {
-    font-family: Arial;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+body {
+  font-family: Arial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .deck {
-    position: relative;
-    width: 400px;
-    height: 250px;
-    margin-top: 40px;
-    margin-bottom: 40px; 
-  }
+/* hide radios */
+input {
+  display: none;
+}
 
-  .card {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: white;
-    border: 2px solid #333;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 18px;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    transition: transform 0.4s;
-    pointer-events: none; /* 🔥 KEY FIX */
-  }
+.deck {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  margin: 40px 0;
+  perspective: 1000px;
+}
 
-  .card:first-child {
-    pointer-events: auto; /* only top card is interactive */
-  }
+/* card base */
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
 
-  .controls {
-    position: relative;
-    z-index: 100; /* ensure above everything */
-  }
+/* stacking positions */
+#step1:checked ~ .deck .c1 { transform: translateY(0); z-index: 3; }
+#step1:checked ~ .deck .c2 { transform: translateY(15px); z-index: 2; }
+#step1:checked ~ .deck .c3 { transform: translateY(30px); z-index: 1; }
 
-  button {
-    margin: 5px;
-    padding: 12px 18px;
-    cursor: pointer;
-    font-size: 16px;
-  }
+#step2:checked ~ .deck .c2 { transform: translateY(0); z-index: 3; }
+#step2:checked ~ .deck .c3 { transform: translateY(15px); z-index: 2; }
+#step2:checked ~ .deck .c1 { transform: translateY(30px); z-index: 1; }
 
-  .hidden {
-    display: none;
-  }
+#step3:checked ~ .deck .c3 { transform: translateY(0); z-index: 3; }
+#step3:checked ~ .deck .c1 { transform: translateY(15px); z-index: 2; }
+#step3:checked ~ .deck .c2 { transform: translateY(30px); z-index: 1; }
 
-  .progress {
-    width: 400px;
-    margin-top: 15px;
-    border: 1px solid #ccc;
-  }
+/* flip container */
+.inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
 
-  #progressBar {
-    height: 20px;
-    width: 0%;
-    background: green;
-  }
+/* flip trigger */
+.flip-toggle:checked + .card .inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: #f0f0f0;
+}
+
+/* controls */
+.controls label {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #ddd;
+  cursor: pointer;
+  display: inline-block;
+}
 </style>
 </head>
 
 <body>
 
-<div class="deck" id="deck">
-  <div class="card">Card 1: What is HOPSYST1 about?</div>
-  <div class="card">Card 2: What is PROGIT1 about?</div>
-  <div class="card">Card 3: What is SITNET1 about?</div>
+<!-- STEP CONTROL -->
+<input type="radio" name="step" id="step1" checked>
+<input type="radio" name="step" id="step2">
+<input type="radio" name="step" id="step3">
+
+<div class="deck">
+
+  <!-- CARD 1 -->
+  <input type="checkbox" id="flip1" class="flip-toggle">
+  <label for="flip1" class="card c1">
+    <div class="inner">
+      <div class="front">HOPSYST1?</div>
+      <div class="back">Operating Systems</div>
+    </div>
+  </label>
+
+  <!-- CARD 2 -->
+  <input type="checkbox" id="flip2" class="flip-toggle">
+  <label for="flip2" class="card c2">
+    <div class="inner">
+      <div class="front">PROGIT1?</div>
+      <div class="back">Programming + Git</div>
+    </div>
+  </label>
+
+  <!-- CARD 3 -->
+  <input type="checkbox" id="flip3" class="flip-toggle">
+  <label for="flip3" class="card c3">
+    <div class="inner">
+      <div class="front">SITNET1?</div>
+      <div class="back">Networking</div>
+    </div>
+  </label>
+
 </div>
 
+<!-- CONTROLS -->
 <div class="controls">
-  <button onclick="nextCard()">Next</button>
-  <button onclick="startOver()">Start Over</button>
-  <button onclick="endCards()">End</button>
+  <label for="step1">1</label>
+  <label for="step2">2</label>
+  <label for="step3">3</label>
 </div>
-
-<div class="progress">
-  <div id="progressBar"></div>
-</div>
-
-<script>
-  const deck = document.getElementById("deck");
-  let cards = Array.from(deck.children);
-  let index = 0;
-
-  function updateStack() {
-    cards.forEach((card, i) => {
-      card.style.zIndex = cards.length - i;
-      card.style.transform = `translateY(${i * 15}px)`;
-
-      // 🔥 ensure only top card is clickable
-      card.style.pointerEvents = (i === 0) ? "auto" : "none";
-    });
-  }
-
-  function nextCard() {
-    const first = cards.shift();
-    cards.push(first);
-    deck.appendChild(first);
-
-    index = (index + 1) % cards.length;
-    updateProgress();
-    updateStack();
-  }
-
-  function startOver() {
-    cards = Array.from(deck.children);
-    index = 0;
-    updateProgress();
-    updateStack();
-  }
-
-  function endCards() {
-    deck.classList.add("hidden");
-    document.querySelector(".controls").classList.add("hidden");
-  }
-
-  function updateProgress() {
-    const percent = ((index + 1) / cards.length) * 100;
-    document.getElementById("progressBar").style.width = percent + "%";
-  }
-
-  updateStack();
-</script>
 
 </body>
 </html>
