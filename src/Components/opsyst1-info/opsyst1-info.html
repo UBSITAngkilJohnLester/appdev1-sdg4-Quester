@@ -1,1 +1,23 @@
-<p>opsyst1-info works!</p>
+<div style="padding: 20px;">
+  <a [routerLink]="['/learn']">← Back to subjects</a>
+
+  <h2>Operating Systems</h2>
+  <p>Understand how operating systems manage hardware and software resources.</p>
+
+  <hr>
+
+  <h4>Related Articles</h4>
+
+  <div *ngFor="let article of articles$" class="card mb-3" style="max-width: 40rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ article.label }}</h5>
+      <div *ngIf="article.data$ | async as data; else loading">
+        <p class="card-text">{{ data.extract }}</p>
+        <a [href]="data.content_urls?.desktop?.page" target="_blank">Read full article →</a>
+      </div>
+      <ng-template #loading>
+        <p>Loading...</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
