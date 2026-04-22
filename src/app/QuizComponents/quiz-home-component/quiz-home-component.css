@@ -9,3 +9,32 @@
 .hard{
     background-color: red;
 }
+
+.center{
+    text-align: center;
+    margin: 20px;
+}
+
+.top{
+    margin-top: 100px;
+}
+
+.options{
+    margin-top: 10px;
+}
+
+.bg{
+    background-color: #dd9df3;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.col{
+    margin: 30px;
+}
+
+.btn{
+    margin: 5px;
+}
