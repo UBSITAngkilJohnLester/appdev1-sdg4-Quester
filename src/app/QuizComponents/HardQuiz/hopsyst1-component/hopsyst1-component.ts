@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hopsyst1-component',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './hopsyst1-component.html',
   styleUrl: './hopsyst1-component.css',
 })
