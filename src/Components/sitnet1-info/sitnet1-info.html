@@ -1,10 +1,9 @@
 <div style="padding: 20px;">
-  <a [routerLink]="['/learn']">← Back to subjects</a>
-
-  <h2>Networking</h2>
-  <p>Learn how devices communicate and how networks are structured.</p>
-
-  <hr>
+  <app-subject-header
+    title="Networking"
+    description="Learn how devices communicate and how networks are structured."
+    (backClicked)="goBack()">
+  </app-subject-header>
 
   <h4>Related Articles</h4>
 
@@ -16,7 +15,12 @@
         <a [href]="data.content_urls?.desktop?.page" target="_blank">Read full article →</a>
       </div>
       <ng-template #loading>
-        <p>Loading...</p>
+        <ng-container *ngIf="(article.data$ | async) === null; else spinner">
+          <p class="text-danger">Failed to load article.</p>
+        </ng-container>
+        <ng-template #spinner>
+          <p>Loading...</p>
+        </ng-template>
       </ng-template>
     </div>
   </div>

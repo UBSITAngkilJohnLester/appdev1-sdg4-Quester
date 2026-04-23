@@ -17,6 +17,7 @@ import { HOpsyst1Component } from './QuizComponents/HardQuiz/hopsyst1-component/
 import { ESitnet1Component } from './QuizComponents/EasyQuiz/esitnet1-component/esitnet1-component';
 import { MSitnet1Component } from './QuizComponents/MediumQuiz/msitnet1-component/msitnet1-component';
 import { HSitnet1Component } from './QuizComponents/HardQuiz/hsitnet1-component/hsitnet1-component';
+import { PageNotFound } from '../Components/page-not-found/page-not-found';
 import { quizGuardGuard } from './QuizComponents/Guard/quiz-guard-guard';
 
 export const routes: Routes = [
@@ -51,6 +52,11 @@ export const routes: Routes = [
 
     ///=====SITNET====//////////////////////
     {path: 'SitnetE', component: ESitnet1Component},
+    {path: 'SitnetM', component: MSitnet1Component},
+    {path: 'SitnetH', component: HSitnet1Component},
+
+
+    { path: '**', component: PageNotFound },
     {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard]},
     {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard]}
 ];
