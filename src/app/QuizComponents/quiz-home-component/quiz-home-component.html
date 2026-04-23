@@ -5,21 +5,21 @@
     <div class="col bg">
         <h3>Progit</h3>
         <button type="button" class="btn btn-primary btn-lg easy" routerLink="/ProgitE">Easy</button>
-        <button type="button" class="btn btn-primary btn-lg medium" routerLink="/ProgitM">Medium</button>
-        <button type="button" class="btn btn-primary btn-lg hard" routerLink="/ProgitH">Hard</button>
+        <button type="button" class="btn btn-primary btn-lg medium" [disabled]="!progress.progitEasyDone" routerLink="/ProgitM">Medium</button>
+        <button type="button" class="btn btn-primary btn-lg hard" [disabled]="!progress.progitMediumDone" routerLink="/ProgitH">Hard</button>
     </div>
 
     <div class="col bg">
         <h3>Opsyst</h3>
         <button type="button" class="btn btn-primary btn-lg easy" routerLink="/OpsystE">Easy</button>
-        <button type="button" class="btn btn-primary btn-lg medium" routerLink="/OpsystM">Medium</button>
-        <button type="button" class="btn btn-primary btn-lg hard" routerLink="/OpsystH">Hard</button>
+        <button type="button" class="btn btn-primary btn-lg medium" [disabled]="!progress.opsystEasyDone" routerLink="/OpsystM">Medium</button>
+        <button type="button" class="btn btn-primary btn-lg hard" [disabled]="!progress.opsystMediumDone" routerLink="/OpsystH">Hard</button>
     </div>
 
     <div class="col bg">
         <h3>Sitnet</h3>
         <button type="button" class="btn btn-primary btn-lg easy" routerLink="/SitnetE">Easy</button>
-        <button type="button" class="btn btn-primary btn-lg medium" routerLink="/SitnetM">Medium</button>
-        <button type="button" class="btn btn-primary btn-lg hard" routerLink="/SitnetH">Hard</button>
+        <button type="button" class="btn btn-primary btn-lg medium" [disabled]="!progress.sitnetEasyDone" routerLink="/SitnetM">Medium</button>
+        <button type="button" class="btn btn-primary btn-lg hard" [disabled]="!progress.sitnetMediumDone" routerLink="/SitnetH">Hard</button>
     </div>
 </div>
