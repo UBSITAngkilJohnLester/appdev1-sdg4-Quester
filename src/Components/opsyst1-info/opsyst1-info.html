@@ -1,23 +1,28 @@
-<div style="padding: 20px;">
-  <app-subject-header
-    title="Operating Systems"
-    description="Understand how operating systems manage hardware and software resources."
-    (backClicked)="goBack()">
-  </app-subject-header>
+<body style="cursor: default;">
+  <div class="center">
+    <div style="padding: 20px;">
+    <app-subject-header
+      title="Operating Systems"
+      description="Understand how operating systems manage hardware and software resources."
+      (backClicked)="goBack()">
+    </app-subject-header>
 
-  <h4>Related Articles</h4>
+    <h4>Related Articles</h4>
 
-  <div *ngFor="let article of articles$" class="card mb-3" style="max-width: 40rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{ article.label }}</h5>
-      <ng-container *ngIf="article.data$ | async as state">
-        <p *ngIf="state.status === 'loading'">Loading...</p>
-        <p *ngIf="state.status === 'error'" class="text-danger">Failed to load article.</p>
-        <ng-container *ngIf="state.status === 'success'">
-          <p class="card-text">{{ state.data.extract }}</p>
-          <a [href]="state.data.content_urls?.desktop?.page" target="_blank">Read full article →</a>
+    <div *ngFor="let article of articles$" class="card mb-3" style="max-width: 40rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ article.label }}</h5>
+        <ng-container *ngIf="article.data$ | async as state">
+          <p *ngIf="state.status === 'loading'">Loading...</p>
+          <p *ngIf="state.status === 'error'" class="text-danger">Failed to load article.</p>
+          <ng-container *ngIf="state.status === 'success'">
+            <p class="card-text">{{ state.data.extract }}</p>
+            <a [href]="state.data.content_urls?.desktop?.page" target="_blank">Read full article →</a>
+          </ng-container>
         </ng-container>
-      </ng-container>
+      </div>
     </div>
   </div>
-</div>
+  </div>
+</body>
+

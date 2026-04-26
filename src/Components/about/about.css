@@ -1,0 +1,10 @@
+.btn{
+    background-color: #00c3ff;
+    color: black;
+}
+
+.btn:hover{
+    transform: translateY(-5px); /* lift up */
+    color: white !important;
+    transition: all 0.3s ease;
+}
