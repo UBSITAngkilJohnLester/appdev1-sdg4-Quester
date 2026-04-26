@@ -52,11 +52,9 @@ export const routes: Routes = [
 
     ///=====SITNET====//////////////////////
     {path: 'SitnetE', component: ESitnet1Component},
-    {path: 'SitnetM', component: MSitnet1Component},
-    {path: 'SitnetH', component: HSitnet1Component},
-
-
-    { path: '**', component: PageNotFound },
     {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard]},
-    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard]}
+    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard]},
+
+    //Error Message
+    { path: '**', component: PageNotFound }
 ];

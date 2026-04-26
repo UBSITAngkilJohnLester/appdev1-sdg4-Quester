@@ -1,3 +1,74 @@
-<h1 class="center">Welcome to Quester!</h1>
+<section class="hero text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Welcome to Quester!</h1>
+    <p class="lead mt-3">
+      A free learning platform for IT students. Study lessons, review with flashcards,
+      and test your knowledge with quizzes — all in one place.
+    </p>
+    <a routerLink="/learn" class="btn btn-primary btn-lg mt-3">Start Learning</a>
+  </div>
+</section>
 
-<p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<section class="container py-5">
+  <h2 class="text-center mb-4">What can you do on Quester?</h2>
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-md-4">
+      <div class="card h-100 text-center shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title">📚 Learn</h3>
+          <p class="card-text">Browse lessons on Programming, Networking, and Operating Systems.</p>
+          <a routerLink="/learn" class="btn btn-primary mt-2">Go to Lessons</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 text-center shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title">🃏 Flashcards</h3>
+          <p class="card-text">Review key terms and concepts with interactive flashcards.</p>
+          <a routerLink="/flashcards" class="btn btn-primary mt-2">Go to Flashcards</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 text-center shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title">🧠 Quizzes</h3>
+          <p class="card-text">Test yourself with Easy, Medium, and Hard quizzes per subject.</p>
+          <a routerLink="/quizzes" class="btn btn-primary mt-2">Go to Quizzes</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row align-items-center justify-content-center">
+
+    <div class="col-md-2 text-center mb-3">
+      <img
+        src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/05/E_SDG-goals_icons-individual-rgb-04.png"
+        alt="SDG 4 Quality Education logo"
+        style="width: 120px;">
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="fw-bold">SDG 4 — Quality Education</h2>
+      <p class="mt-2">
+        Quester supports the United Nations Sustainable Development Goal 4:
+        ensuring inclusive and equitable quality education for all.
+        By providing free access to learning materials, flashcards, and assessments,
+        Quester helps students build the skills they need — anytime, anywhere.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="text-center py-4">
+  <p class="text-muted">{{ message() }}</p>
+</section>
