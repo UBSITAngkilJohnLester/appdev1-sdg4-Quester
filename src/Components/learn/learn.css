@@ -1,0 +1,43 @@
+.center{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+h4{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.col{
+    margin-left: 20px;
+}
+
+.space{
+    margin-top: 30px;
+}
+
+.bg-primary{
+    background-color: #00c3ff !important;
+}
+
+.progit:hover {
+  background-color: #f39b53 !important;
+  color: black !important;
+  transition: all 0.3s ease;
+}
+
+.sitnet:hover {
+  background-color: #fffa5d !important;
+  color: black !important;
+  transition: all 0.3s ease;
+}
+
+.opsyst:hover {
+  background-color: #ff6bec !important;
+  color: black !important;
+  transition: all 0.3s ease;
+}
