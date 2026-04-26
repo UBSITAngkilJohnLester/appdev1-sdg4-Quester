@@ -55,6 +55,6 @@ export const routes: Routes = [
     {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard]},
     {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard]},
 
-    //Error Message
-    { path: '**', component: PageNotFound }
+    // Error Message
+    { path: '**', component: PageNotFound },
 ];
