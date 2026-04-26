@@ -1,1 +1,45 @@
-<p>about works!</p>
+<section class="container py-5">
+
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">About Quester</h1>
+    <p class="lead mt-3">
+      Quester is a free learning platform built for IT students, aligned with
+      <strong>UN SDG 4 — Quality Education</strong>. It provides lessons,
+      flashcards, and quizzes to help students study anytime, anywhere.
+    </p>
+  </div>
+
+  <h2 class="text-center mb-4">Meet the Team</h2>
+  <div class="row g-4 justify-content-center">
+    @for (member of members; track member.name) {
+      <div class="col-md-4">
+        <div class="card h-100 text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{ member.name }}</h5>
+            <p class="text-muted">{{ member.role }}</p>
+            <p class="card-text">{{ member.description }}</p>
+            <a [href]="member.facebook" target="_blank" class="btn btn-primary mt-2">
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+</section>
+
+<div class="row justify-content-center mb-5">
+  <div class="col-md-8">
+    <div class="card shadow-sm border-0" style="background-color: #c31a2b;">
+      <div class="card-body text-white text-center py-4">
+        <h4 class="fw-bold">Our Mission</h4>
+        <p class="mt-2 mb-0">
+          SDG 4 calls for inclusive and equitable quality education for all.
+          Quester answers that call by making IT education accessible —
+          free, structured, and available to every student regardless of background.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

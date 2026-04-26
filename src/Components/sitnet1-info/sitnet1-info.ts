@@ -3,6 +3,7 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { WikipediaService } from '../../app/Services/wikipedia';
 import { SubjectHeaderComponent } from '../subject-header/subject-header';
+import { map, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-sitnet1-info',
@@ -28,6 +29,9 @@ export class Sitnet1Info {
 
   articles$ = this.topics.map(topic => ({
     label: topic.label,
-    data$: this.wikipedia.getArticles(topic.query)
+    data$: this.wikipedia.getArticles(topic.query).pipe(
+      map(data => ({ status: data ? 'success' : 'error', data })),
+      startWith({ status: 'loading', data: null })
+    )
   }));
 }

@@ -10,18 +10,14 @@
   <div *ngFor="let article of articles$" class="card mb-3" style="max-width: 40rem;">
     <div class="card-body">
       <h5 class="card-title">{{ article.label }}</h5>
-      <div *ngIf="article.data$ | async as data; else loading">
-        <p class="card-text">{{ data.extract }}</p>
-        <a [href]="data.content_urls?.desktop?.page" target="_blank">Read full article →</a>
-      </div>
-      <ng-template #loading>
-        <ng-container *ngIf="(article.data$ | async) === null; else spinner">
-          <p class="text-danger">Failed to load article.</p>
+      <ng-container *ngIf="article.data$ | async as state">
+        <p *ngIf="state.status === 'loading'">Loading...</p>
+        <p *ngIf="state.status === 'error'" class="text-danger">Failed to load article.</p>
+        <ng-container *ngIf="state.status === 'success'">
+          <p class="card-text">{{ state.data.extract }}</p>
+          <a [href]="state.data.content_urls?.desktop?.page" target="_blank">Read full article →</a>
         </ng-container>
-        <ng-template #spinner>
-          <p>Loading...</p>
-        </ng-template>
-      </ng-template>
+      </ng-container>
     </div>
   </div>
 </div>
