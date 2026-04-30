@@ -67,11 +67,22 @@ a, label {
   width: 500px;
 }
 
-
 .cards {
   position: relative;
   width: 100%;
   height: 250px;
+}
+
+
+.editable {
+  outline: none;
+  cursor: text;
+  padding: 5px;
+}
+
+.editable:focus {
+  outline: 2px solid #4CAF50;
+  background: #f9fff9;
 }
 </style>
 </head>
@@ -80,19 +91,26 @@ a, label {
 
 <div class="container">
 
-
+  
   <input type="radio" name="card" id="c1" checked>
   <input type="radio" name="card" id="c2">
   <input type="radio" name="card" id="c3">
 
   <div class="cards">
 
-    
+   
     <div class="card card1">
-      <h2>OPSYST1</h2>
-      <p>What is an Operating System?</p>
+      <h2 class="editable" contenteditable="true">OPSYST1</h2>
+
+      <p class="editable" contenteditable="true">
+        What is an Operating System?
+      </p>
+
       <hr>
-      <p>It manages hardware and software resources.</p>
+
+      <p class="editable" contenteditable="true">
+        It manages hardware and software resources.
+      </p>
 
       <div class="buttons">
         <label for="c2">NEXT</label>
@@ -100,12 +118,19 @@ a, label {
       </div>
     </div>
 
-    
+   
     <div class="card card2">
-      <h2>OPSYST1</h2>
-      <p>What is a Kernel?</p>
+      <h2 class="editable" contenteditable="true">OPSYST1</h2>
+
+      <p class="editable" contenteditable="true">
+        What is a Kernel?
+      </p>
+
       <hr>
-      <p>The core part of the operating system.</p>
+
+      <p class="editable" contenteditable="true">
+        The core part of the operating system.
+      </p>
 
       <div class="buttons">
         <label for="c1">BACK</label>
@@ -114,12 +139,19 @@ a, label {
       </div>
     </div>
 
-    
+   
     <div class="card card3">
-      <h2>OPSYST1</h2>
-      <p>What is Process Management?</p>
+      <h2 class="editable" contenteditable="true">OPSYST1</h2>
+
+      <p class="editable" contenteditable="true">
+        What is Process Management?
+      </p>
+
       <hr>
-      <p>Handles execution of processes in OS.</p>
+
+      <p class="editable" contenteditable="true">
+        Handles execution of processes in OS.
+      </p>
 
       <div class="buttons">
         <label for="c2">BACK</label>
