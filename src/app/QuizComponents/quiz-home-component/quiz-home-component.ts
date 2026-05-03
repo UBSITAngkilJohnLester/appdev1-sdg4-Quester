@@ -15,4 +15,9 @@ export class QuizHomeComponent implements OnInit{
   ngOnInit(): void {
     this.progress = JSON.parse(localStorage.getItem('quizProgress') || '{}');
   }
+
+  resetProgress() {
+    localStorage.removeItem('quizProgress');
+    location.reload();
+  }
 }

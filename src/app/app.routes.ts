@@ -42,18 +42,18 @@ export const routes: Routes = [
     ///////////// For Quiz Home Routing /////////////////////////////////////////////////////////
     ///=====PROGIT====//////////////////////
     {path: 'ProgitE', component: EProgit1Component},
-    {path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard]},
-    {path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard]},
+    {path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/ProgitE' }},
+    {path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/ProgitM' }},
 
     ///=====OPSYST====//////////////////////
     {path: 'OpsystE', component: EOpsyst1Component},
-    {path: 'OpsystM', component: MOpsyst1Component, canActivate: [quizGuardGuard]},
-    {path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard]},
+    {path: 'OpsystM', component: MOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystE'}},
+    {path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystM'}},
 
     ///=====SITNET====//////////////////////
     {path: 'SitnetE', component: ESitnet1Component},
-    {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard]},
-    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard]},
+    {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetE' }},
+    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetM' }},
 
     // Error Message
     { path: '**', component: PageNotFound },
