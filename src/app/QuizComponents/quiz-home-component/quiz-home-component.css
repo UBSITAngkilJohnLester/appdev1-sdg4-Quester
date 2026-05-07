@@ -9,3 +9,48 @@
 .hard{
     background-color: red;
 }
+
+.center{
+    text-align: center;
+    margin: 20px;
+}
+
+.top{
+    margin-top: 100px;
+}
+
+.options{
+    margin-top: 10px;
+}
+
+.bg-p{
+    background-color: #f39b53;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.bg-s{
+    background-color: #fffa5d;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.bg-o{
+    background-color: #ff6bec;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.col{
+    margin: 30px;
+}
+
+.btn{
+    margin: 5px;
+}

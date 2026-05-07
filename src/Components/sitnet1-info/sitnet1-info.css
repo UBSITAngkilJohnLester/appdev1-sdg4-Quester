@@ -1,0 +1,13 @@
+body{
+    background-image: url(bg.png);
+}
+
+.card{
+    background-color: #fffa5d !important;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
