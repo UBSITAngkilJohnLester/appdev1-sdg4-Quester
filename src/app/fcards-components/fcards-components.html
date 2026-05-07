@@ -7,91 +7,107 @@
 <style>
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: Arial;
-  margin: 0;
-  height: 70vh;
-  overflow: hidden; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #9ec9d9;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 30px;
 }
 
 
 .deck {
   display: grid;
-  grid-template-columns: repeat(2, 360px);
-  grid-template-rows: repeat(2, 200px);
-  gap: 25px;
+  grid-template-columns: repeat(2, 320px);
+  gap: 30px;
+  justify-content: center;
 }
 
 
 .column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: #eee;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #444;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 
 .subject {
-  font-weight: bold;
+  font-size: 22px;
   margin-bottom: 10px;
-  font-size: 18px;
+}
+
+
+.desc {
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 
 .card {
-  width: 320px;   
-  height: 180px;  
-  border: 2px solid #333;
-  border-radius: 12px;
-  background: white;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00a8cc;
+  border-radius: 8px;
   text-decoration: none;
   color: black;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  font-size: 20px;
+  border: 2px solid #333;
   transition: 0.2s;
 }
 
-
 .card:hover {
+  background: #008da8;
   transform: scale(1.05);
-  background: #f5f5f5;
 }
-
 </style>
 </head>
 
 <body>
 
+<h1>Welcome to Flash-Cards</h1>
+
+<h2 class="section-title">Choose a Subject</h2>
+
 <div class="deck">
 
   <div class="column">
     <div class="subject">OPSYST1</div>
-    <a class="card" href="opsyst1fcards.html">OS Definition</a>
+    <div class="desc">Review Operating System concepts with flashcards.</div>
+    <a class="card" routerLink="/opsyst1fcards">Go to Flashcards</a>
   </div>
 
   <div class="column">
     <div class="subject">PROGIT1</div>
-    <a class="card" href="progit1fcards.html">Variable</a>
+    <div class="desc">Practice programming basics and variables.</div>
+    <a class="card" routerLink="/progit1fcards">Go to Flashcards</a>
   </div>
 
   <div class="column">
     <div class="subject">SITNET1</div>
-    <a class="card" href="sitnet1fcards.html">Network</a>
+    <div class="desc">Learn networking fundamentals interactively.</div>
+    <a class="card" routerLink="/sitnet1fcards">Go to Flashcards</a>
   </div>
 
   <div class="column">
     <div class="subject">CUSTOM</div>
-    <a class="card" href="customcards.html">Edit Card</a>
+    <div class="desc">Create and edit your own flashcards.</div>
+    <a class="card" routerLink="/customcards">Edit Cards</a>
   </div>
 
 </div>

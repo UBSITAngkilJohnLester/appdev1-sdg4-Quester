@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-progit1fcards',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './progit1fcards.html',
   styleUrl: './progit1fcards.css',
 })
