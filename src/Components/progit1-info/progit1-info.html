@@ -1,18 +1,23 @@
-<div style="padding: 20px;">
-  <app-subject-header
-    title="Programming Lessons"
-    description="Select a lesson to get started."
-    (backClicked)="goBack()">
-  </app-subject-header>
+<body>
+    <div class="center">
+  <div style="padding: 20px;">
+    <app-subject-header
+      title="Programming Lessons"
+      description="Select a lesson to get started."
+      style="cursor: default;"
+      (backClicked)="goBack()">
+    </app-subject-header>
 
-  @for (lesson of lessons; track lesson.id) {
-    <div class="card text-white bg-primary mb-3"
-      style="max-width: 30rem; cursor: pointer;"
-      [routerLink]="['/learn', 'progit', lesson.id]">
-      <div class="card-body">
-        <h5 class="card-title">{{ lesson.title }}</h5>
-        <p class="card-text">{{ lesson.description }}</p>
+    @for (lesson of lessons; track lesson.id) {
+      <div class="card text-white bg-primary mb-3"
+        style="min-width: 50rem; cursor: pointer;"
+        [routerLink]="['/learn', 'progit', lesson.id]">
+        <div class="card-body">
+          <h5 class="card-title">{{ lesson.title }}</h5>
+          <p class="card-text">{{ lesson.description }}</p>
+        </div>
       </div>
-    </div>
-  }
+      }
+  </div>
 </div>
+</body>

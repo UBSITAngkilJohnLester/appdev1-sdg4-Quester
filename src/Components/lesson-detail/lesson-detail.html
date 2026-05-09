@@ -1,17 +1,21 @@
-<div style="padding: 20px;">
-  <a [routerLink]="['/learn', subject]">← Back to lessons</a>
+<body>
+  <div>
+    <div style="padding: 20px;">
+      <a [routerLink]="['/learn', subject]">← Back to lessons</a>
 
-  <div *ngIf="lesson; else notFound">
-    <h2>{{ lesson.title }}</h2>
-    <p>{{ lesson.content }}</p>
+      <div *ngIf="lesson; else notFound">
+        <h2>{{ lesson.title }}</h2>
+        <p>{{ lesson.content }}</p>
 
-    <h4>Key Points</h4>
-    <ul>
-      <li *ngFor="let point of lesson.keyPoints">{{ point }}</li>
-    </ul>
-  </div>
+        <h4>Key Points</h4>
+        <ul>
+          <li *ngFor="let point of lesson.keyPoints">{{ point }}</li>
+        </ul>
+      </div>
 
-  <ng-template #notFound>
-    <p>Lesson not found.</p>
-  </ng-template>
+      <ng-template #notFound>
+        <p>Lesson not found.</p>
+      </ng-template>
+    </div>
 </div>
+</body>

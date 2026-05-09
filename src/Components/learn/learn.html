@@ -1,20 +1,50 @@
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-top: 20px; cursor: pointer;" [routerLink]="['/learn', 'progit']">
-    <div class="card-body">
-      <h4 class="card-title">Programming</h4>
-      <p class="card-text"><strong>Start here if you're new to coding.</strong> These lessons introduce the fundamental concepts of computer programming...</p>
+<h1 class="display-4 center">Start Learning Here!</h1>
+<div class="row text-center">
+  <div class="col">
+    <div
+    class="card progit text-white bg-primary mb-3"
+    style="max-width: 25rem;min-height: 18rem; margin-top: 50px; cursor: pointer"
+    [routerLink]="['/learn', 'progit']"
+    >
+      <div class="card-body">
+        <h4 class="card-title">Programming</h4>
+        <p class="card-text space">
+          <strong>Start here if you're new to coding.</strong> These lessons introduce the fundamental
+          concepts of computer programming...
+        </p>
+      </div>
     </div>
-</div>
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-top: 20px; cursor: pointer;" [routerLink]="['/learn', 'sitnet']">
-    <div class="card-body">
-      <h4 class="card-title">Networking</h4>
-      <p class="card-text"><strong>Learn how devices talk to each other.</strong> These lessons introduce the fundamental concepts of computer networks and data communication...</p>
+  </div>
+  
+  <div class="col">
+    <div
+      class="card sitnet text-white bg-primary mb-3"
+      style="max-width: 25rem; min-height: 18rem; margin-top: 50px; cursor: pointer"
+      [routerLink]="['/learn', 'sitnet']"
+    >
+      <div class="card-body">
+        <h4 class="card-title">Networking</h4>
+        <p class="card-text space">
+          <strong>Learn how devices talk to each other.</strong> These lessons introduce the
+          fundamental concepts of computer networks and data communication...
+        </p>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-top: 20px; cursor: pointer;" [routerLink]="['/learn', 'opsyst']">
+  <div class="col">
+    <div
+    class="card opsyst text-white bg-primary mb-3"
+    style="max-width: 25rem; min-height: 18rem; margin-top: 50px; cursor: pointer"
+    [routerLink]="['/learn', 'opsyst']"
+  >
     <div class="card-body">
       <h4 class="card-title">Operating System</h4>
-      <p class="card-text"><strong>Understand what runs under the hood.</strong> This course introduces the core concepts and functions of modern operating systems...</p>
+      <p class="card-text">
+        <strong>Understand what runs under the hood.</strong> This course introduces the core
+        concepts and functions of modern operating systems...
+      </p>
     </div>
+  </div>
+  </div>
 </div>

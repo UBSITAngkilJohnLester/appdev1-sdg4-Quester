@@ -19,6 +19,10 @@ import { MSitnet1Component } from './QuizComponents/MediumQuiz/msitnet1-componen
 import { HSitnet1Component } from './QuizComponents/HardQuiz/hsitnet1-component/hsitnet1-component';
 import { PageNotFound } from '../Components/page-not-found/page-not-found';
 import { quizGuardGuard } from './QuizComponents/Guard/quiz-guard-guard';
+import { Customfcards } from './customfcards/customfcards';
+import { OPSYST1fcards } from './subjectcards/opsyst1fcards/opsyst1fcards';
+import { PROGIT1fcards } from './subjectcards/progit1fcards/progit1fcards';
+import { SITNET1fcards } from './subjectcards/sitnet1fcards/sitnet1fcards';
 
 export const routes: Routes = [
     // Default
@@ -42,18 +46,24 @@ export const routes: Routes = [
     ///////////// For Quiz Home Routing /////////////////////////////////////////////////////////
     ///=====PROGIT====//////////////////////
     {path: 'ProgitE', component: EProgit1Component},
-    {path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard]},
-    {path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard]},
+    {path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/ProgitE' }},
+    {path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/ProgitM' }},
 
     ///=====OPSYST====//////////////////////
     {path: 'OpsystE', component: EOpsyst1Component},
-    {path: 'OpsystM', component: MOpsyst1Component, canActivate: [quizGuardGuard]},
-    {path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard]},
+    {path: 'OpsystM', component: MOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystE'}},
+    {path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystM'}},
 
     ///=====SITNET====//////////////////////
     {path: 'SitnetE', component: ESitnet1Component},
-    {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard]},
-    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard]},
+    {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetE' }},
+    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetM' }},
+
+    //FlashCards
+    {path: 'customfcards', component: Customfcards},
+    {path: 'opsyst1fcards', component: OPSYST1fcards},
+    {path: 'progit1fcards', component: PROGIT1fcards},
+    {path: 'sitnet1fcards', component: SITNET1fcards},
 
     // Error Message
     { path: '**', component: PageNotFound },

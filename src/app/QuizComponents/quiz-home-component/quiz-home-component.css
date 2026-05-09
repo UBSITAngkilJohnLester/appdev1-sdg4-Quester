@@ -23,8 +23,24 @@
     margin-top: 10px;
 }
 
-.bg{
-    background-color: #dd9df3;
+.bg-p{
+    background-color: #f39b53;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.bg-s{
+    background-color: #fffa5d;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.bg-o{
+    background-color: #ff6bec;
     padding: 10px;
     padding-bottom: 20px;
     margin: 10px;
