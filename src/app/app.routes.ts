@@ -19,6 +19,10 @@ import { MSitnet1Component } from './QuizComponents/MediumQuiz/msitnet1-componen
 import { HSitnet1Component } from './QuizComponents/HardQuiz/hsitnet1-component/hsitnet1-component';
 import { PageNotFound } from '../Components/page-not-found/page-not-found';
 import { quizGuardGuard } from './QuizComponents/Guard/quiz-guard-guard';
+import { Customfcards } from './customfcards/customfcards';
+import { OPSYST1fcards } from './subjectcards/opsyst1fcards/opsyst1fcards';
+import { PROGIT1fcards } from './subjectcards/progit1fcards/progit1fcards';
+import { SITNET1fcards } from './subjectcards/sitnet1fcards/sitnet1fcards';
 
 export const routes: Routes = [
     // Default
@@ -54,6 +58,12 @@ export const routes: Routes = [
     {path: 'SitnetE', component: ESitnet1Component},
     {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetE' }},
     {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetM' }},
+
+    //FlashCards
+    {path: 'customfcards', component: Customfcards},
+    {path: 'opsyst1fcards', component: OPSYST1fcards},
+    {path: 'progit1fcards', component: PROGIT1fcards},
+    {path: 'sitnet1fcards', component: SITNET1fcards},
 
     // Error Message
     { path: '**', component: PageNotFound },
