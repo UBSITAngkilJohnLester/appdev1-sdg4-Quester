@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
+import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { SubjectHeaderComponent } from '../subject-header/subject-header';
 
 @Component({
   selector: 'app-progit1-info',
-  imports: [RouterLink, SubjectHeaderComponent],
+  imports: [RouterLink, SubjectHeaderComponent, TitleCasePipe, UpperCasePipe],
   templateUrl: './progit1-info.html',
   styleUrl: './progit1-info.css',
 })

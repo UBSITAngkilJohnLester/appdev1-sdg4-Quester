@@ -1,22 +1,37 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SubjectHeaderComponent } from './subject-header';
 
-import { SubjectHeader } from './subject-header';
-
-describe('SubjectHeader', () => {
-  let component: SubjectHeader;
-  let fixture: ComponentFixture<SubjectHeader>;
+describe('SubjectHeaderComponent', () => {
+  let component: SubjectHeaderComponent;
+  let fixture: ComponentFixture<SubjectHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SubjectHeader],
+      imports: [SubjectHeaderComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SubjectHeader);
+    fixture = TestBed.createComponent(SubjectHeaderComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display the correct title and description', () => {
+    component.title = 'Networking';
+    component.description = 'Learn how devices communicate.';
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Networking');
+    expect(compiled.textContent).toContain('Learn how devices communicate.');
+  });
+
+  it('should emit backClicked when onBack is called', () => {
+    let emitted = false;
+    component.backClicked.subscribe(() => (emitted = true));
+    component.onBack();
+    expect(emitted).toBe(true);
   });
 });

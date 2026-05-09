@@ -1,13 +1,15 @@
 import { TestBed } from '@angular/core/testing';
+import { WikipediaService } from './wikipedia';
+import { provideHttpClient } from '@angular/common/http';
 
-import { Wikipedia } from './wikipedia';
-
-describe('Wikipedia', () => {
-  let service: Wikipedia;
+describe('WikipediaService', () => {
+  let service: WikipediaService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Wikipedia);
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient()]
+    });
+    service = TestBed.inject(WikipediaService);
   });
 
   it('should be created', () => {

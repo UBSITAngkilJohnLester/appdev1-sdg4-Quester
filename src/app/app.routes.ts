@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from '../Components/home/home';
 import { Learn } from '../Components/learn/learn';
 import { About } from '../Components/about/about';
+import { leaveLessonGuard } from './Guards/leave-lesson-guard-guard';
 import { FCardsComponents } from './fcards-components/fcards-components';
 import { QuizHomeComponent } from './QuizComponents/quiz-home-component/quiz-home-component';
 import { Progit1Info } from '../Components/progit1-info/progit1-info';
@@ -39,26 +40,25 @@ export const routes: Routes = [
     { path: 'learn/progit', component: Progit1Info },
     { path: 'learn/sitnet', component: Sitnet1Info },
     { path: 'learn/opsyst', component: Opsyst1Info },
-    { path: 'learn/progit/:lessonId', component: LessonDetail },
-    { path: 'learn/sitnet/:lessonId', component: LessonDetail },
-    { path: 'learn/opsyst/:lessonId', component: LessonDetail },
+    { path: 'learn/progit/:lessonId', component: LessonDetail, canDeactivate: [leaveLessonGuard] },
+    { path: 'learn/sitnet/:lessonId', component: LessonDetail, canDeactivate: [leaveLessonGuard] },
+    { path: 'learn/opsyst/:lessonId', component: LessonDetail, canDeactivate: [leaveLessonGuard] },
 
     ///////////// For Quiz Home Routing /////////////////////////////////////////////////////////
     ///=====PROGIT====//////////////////////
     {path: 'ProgitE', component: EProgit1Component},
-    {path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/ProgitE' }},
-    {path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/ProgitM' }},
+    {path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard], data: { required: 'progitEasyDone', redirect: '/ProgitE' }},
+    {path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard], data: { required: 'progitMediumDone', redirect: '/ProgitM' }},
 
     ///=====OPSYST====//////////////////////
     {path: 'OpsystE', component: EOpsyst1Component},
     {path: 'OpsystM', component: MOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystE'}},
-    {path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystM'}},
+    {path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystMediumDone', redirect: '/OpsystM'}},
 
     ///=====SITNET====//////////////////////
     {path: 'SitnetE', component: ESitnet1Component},
-    {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetE' }},
-    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/SitnetM' }},
-
+    {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetEasyDone', redirect: '/SitnetE' }},
+    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetMediumDone', redirect: '/SitnetM' }},
     //FlashCards
     {path: 'customfcards', component: Customfcards},
     {path: 'opsyst1fcards', component: OPSYST1fcards},
