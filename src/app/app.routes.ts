@@ -46,19 +46,19 @@ export const routes: Routes = [
 
     ///////////// For Quiz Home Routing /////////////////////////////////////////////////////////
     ///=====PROGIT====//////////////////////
-{path: 'ProgitE', component: EProgit1Component},
-{path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard], data: { required: 'progitEasyDone', redirect: '/ProgitE' }},
-{path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard], data: { required: 'progitMediumDone', redirect: '/ProgitM' }},
+    {path: 'ProgitE', component: EProgit1Component},
+    {path: 'ProgitM', component: MProgit1Component, canActivate: [quizGuardGuard], data: { required: 'progitEasyDone', redirect: '/ProgitE' }},
+    {path: 'ProgitH', component: HProgit1Component, canActivate: [quizGuardGuard], data: { required: 'progitMediumDone', redirect: '/ProgitM' }},
 
-///=====OPSYST====//////////////////////
-{path: 'OpsystE', component: EOpsyst1Component},
-{path: 'OpsystM', component: MOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystE'}},
-{path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystMediumDone', redirect: '/OpsystM'}},
+    ///=====OPSYST====//////////////////////
+    {path: 'OpsystE', component: EOpsyst1Component},
+    {path: 'OpsystM', component: MOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystEasyDone', redirect: '/OpsystE'}},
+    {path: 'OpsystH', component: HOpsyst1Component, canActivate: [quizGuardGuard], data: { required: 'opsystMediumDone', redirect: '/OpsystM'}},
 
-///=====SITNET====//////////////////////
-{path: 'SitnetE', component: ESitnet1Component},
-{path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetEasyDone', redirect: '/SitnetE' }},
-{path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetMediumDone', redirect: '/SitnetM' }},
+    ///=====SITNET====//////////////////////
+    {path: 'SitnetE', component: ESitnet1Component},
+    {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetEasyDone', redirect: '/SitnetE' }},
+    {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetMediumDone', redirect: '/SitnetM' }},
     //FlashCards
     {path: 'customfcards', component: Customfcards},
     {path: 'opsyst1fcards', component: OPSYST1fcards},
