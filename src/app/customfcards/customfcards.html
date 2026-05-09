@@ -20,16 +20,13 @@ body {
   background: #9ec9d9;
 }
 
-
 input {
   display: none;
 }
 
-
 .container {
   width: 520px;
 }
-
 
 .card {
   display: none;
@@ -45,10 +42,23 @@ input {
 #c1:checked ~ .cards .card1,
 #c2:checked ~ .cards .card2,
 #c3:checked ~ .cards .card3,
-#c4:checked ~ .cards .card4 {
+#c4:checked ~ .cards .card4,
+#c5:checked ~ .cards .card5,
+#c6:checked ~ .cards .card6,
+#c7:checked ~ .cards .card7,
+#c8:checked ~ .cards .card8,
+#c9:checked ~ .cards .card9,
+#c10:checked ~ .cards .card10,
+#c11:checked ~ .cards .card11,
+#c12:checked ~ .cards .card12,
+#c13:checked ~ .cards .card13,
+#c14:checked ~ .cards .card14,
+#c15:checked ~ .cards .card15,
+#c16:checked ~ .cards .card16,
+#c17:checked ~ .cards .card17,
+#c18:checked ~ .cards .card18 {
   display: block;
 }
-
 
 .editable {
   outline: none;
@@ -64,18 +74,17 @@ p.editable {
   font-size: 18px;
 }
 
-
 .editable:focus {
   outline: 2px solid #00a8cc;
   background: #f0fbff;
 }
 
-
 .buttons {
   margin-top: 20px;
 }
 
-label, a {
+label,
+a {
   text-decoration: none;
   padding: 10px 18px;
   margin: 5px;
@@ -87,10 +96,10 @@ label, a {
   cursor: pointer;
 }
 
-label:hover, a:hover {
+label:hover,
+a:hover {
   background: #008da8;
 }
-
 
 .end {
   background: #ff4d4d;
@@ -106,22 +115,34 @@ label:hover, a:hover {
 
 <div class="container">
 
-
+  
   <input type="radio" name="card" id="c1" checked>
   <input type="radio" name="card" id="c2">
   <input type="radio" name="card" id="c3">
   <input type="radio" name="card" id="c4">
+  <input type="radio" name="card" id="c5">
+  <input type="radio" name="card" id="c6">
+  <input type="radio" name="card" id="c7">
+  <input type="radio" name="card" id="c8">
+  <input type="radio" name="card" id="c9">
+  <input type="radio" name="card" id="c10">
+  <input type="radio" name="card" id="c11">
+  <input type="radio" name="card" id="c12">
+  <input type="radio" name="card" id="c13">
+  <input type="radio" name="card" id="c14">
+  <input type="radio" name="card" id="c15">
+  <input type="radio" name="card" id="c16">
+  <input type="radio" name="card" id="c17">
+  <input type="radio" name="card" id="c18">
 
   <div class="cards">
 
-  
+   
     <div class="card card1">
       <h2 class="editable" contenteditable="true">Card 1</h2>
       <p class="editable" contenteditable="true">Type your content here...</p>
-
       <div class="buttons">
-        <label for="c2">Next</label>
-        <a class="end" href="index.html">End</a>
+        <label for="c2">NEXT</label>
       </div>
     </div>
 
@@ -129,11 +150,9 @@ label:hover, a:hover {
     <div class="card card2">
       <h2 class="editable" contenteditable="true">Card 2</h2>
       <p class="editable" contenteditable="true">Type your content here...</p>
-
       <div class="buttons">
-        <label for="c1">Back</label>
-        <label for="c3">Next</label>
-        <a class="end" href="index.html">End</a>
+        <label for="c1">BACK</label>
+        <label for="c3">NEXT</label>
       </div>
     </div>
 
@@ -141,22 +160,159 @@ label:hover, a:hover {
     <div class="card card3">
       <h2 class="editable" contenteditable="true">Card 3</h2>
       <p class="editable" contenteditable="true">Type your content here...</p>
-
       <div class="buttons">
-        <label for="c2">Back</label>
-        <label for="c4">Next</label>
-        <a class="end" href="index.html">End</a>
+        <label for="c2">BACK</label>
+        <label for="c4">NEXT</label>
+      </div>
+    </div>
+
+  
+    <div class="card card4">
+      <h2 class="editable" contenteditable="true">Card 4</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c3">BACK</label>
+        <label for="c5">NEXT</label>
       </div>
     </div>
 
 
-    <div class="card card4">
-      <h2 class="editable" contenteditable="true">Card 4</h2>
+    <div class="card card5">
+      <h2 class="editable" contenteditable="true">Card 5</h2>
       <p class="editable" contenteditable="true">Type your content here...</p>
-
       <div class="buttons">
-        <label for="c3">Back</label>
-        <a class="end" href="index.html">End</a>
+        <label for="c4">BACK</label>
+        <label for="c6">NEXT</label>
+      </div>
+    </div>
+
+    
+    <div class="card card6">
+      <h2 class="editable" contenteditable="true">Card 6</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c5">BACK</label>
+        <label for="c7">NEXT</label>
+      </div>
+    </div>
+
+
+    <div class="card card7">
+      <h2 class="editable" contenteditable="true">Card 7</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c6">BACK</label>
+        <label for="c8">NEXT</label>
+      </div>
+    </div>
+
+  
+    <div class="card card8">
+      <h2 class="editable" contenteditable="true">Card 8</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c7">BACK</label>
+        <label for="c9">NEXT</label>
+      </div>
+    </div>
+
+  
+    <div class="card card9">
+      <h2 class="editable" contenteditable="true">Card 9</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c8">BACK</label>
+        <label for="c10">NEXT</label>
+      </div>
+    </div>
+
+   
+    <div class="card card10">
+      <h2 class="editable" contenteditable="true">Card 10</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c9">BACK</label>
+        <label for="c11">NEXT</label>
+      </div>
+    </div>
+
+   
+    <div class="card card11">
+      <h2 class="editable" contenteditable="true">Card 11</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c10">BACK</label>
+        <label for="c12">NEXT</label>
+      </div>
+    </div>
+
+   
+    <div class="card card12">
+      <h2 class="editable" contenteditable="true">Card 12</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c11">BACK</label>
+        <label for="c13">NEXT</label>
+      </div>
+    </div>
+
+   
+    <div class="card card13">
+      <h2 class="editable" contenteditable="true">Card 13</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c12">BACK</label>
+        <label for="c14">NEXT</label>
+      </div>
+    </div>
+
+  
+    <div class="card card14">
+      <h2 class="editable" contenteditable="true">Card 14</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c13">BACK</label>
+        <label for="c15">NEXT</label>
+      </div>
+    </div>
+
+    
+    <div class="card card15">
+      <h2 class="editable" contenteditable="true">Card 15</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c14">BACK</label>
+        <label for="c16">NEXT</label>
+      </div>
+    </div>
+
+    
+    <div class="card card16">
+      <h2 class="editable" contenteditable="true">Card 16</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c15">BACK</label>
+        <label for="c17">NEXT</label>
+      </div>
+    </div>
+
+  
+    <div class="card card17">
+      <h2 class="editable" contenteditable="true">Card 17</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c16">BACK</label>
+        <label for="c18">NEXT</label>
+      </div>
+    </div>
+
+   
+    <div class="card card18">
+      <h2 class="editable" contenteditable="true">Card 18</h2>
+      <p class="editable" contenteditable="true">Type your content here...</p>
+      <div class="buttons">
+        <label for="c17">BACK</label>
+        <a class="end" routerLink="/flashcards">END</a>
       </div>
     </div>
 

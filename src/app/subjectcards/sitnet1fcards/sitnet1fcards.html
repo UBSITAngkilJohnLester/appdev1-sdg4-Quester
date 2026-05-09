@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SITNET1 Flashcards</title>
+<title>OPSYST1 Flashcards</title>
 
 <style>
 * {
@@ -50,7 +50,9 @@ input {
 
 #c1:checked ~ .cards .card1,
 #c2:checked ~ .cards .card2,
-#c3:checked ~ .cards .card3 {
+#c3:checked ~ .cards .card3,
+#c4:checked ~ .cards .card4,
+#c5:checked ~ .cards .card5 {
   opacity: 1;
   position: relative;
 }
@@ -113,64 +115,111 @@ a:hover, label:hover {
   <input type="radio" name="card" id="c1" checked>
   <input type="radio" name="card" id="c2">
   <input type="radio" name="card" id="c3">
+  <input type="radio" name="card" id="c4">
+  <input type="radio" name="card" id="c5">
 
   <div class="cards">
 
+  
     <div class="card card1">
       <h2 class="editable" contenteditable="true">OPSYST1</h2>
 
       <p class="editable" contenteditable="true">
-        What is an Operating System?
+        Operating Systems
       </p>
 
       <hr>
 
       <p class="editable" contenteditable="true">
-        It manages hardware and software resources.
+        The operating system is the “boss” that manages everything inside the computer and makes it possible for programs to work.
       </p>
 
       <div class="buttons">
-        <label for="c2">Next</label>
-        <a class="end" href="index.html">End</a>
+        <label for="c2">NEXT</label>
+        <a class="end" routerLink="/flashcards">END</a>
       </div>
     </div>
 
+   
     <div class="card card2">
       <h2 class="editable" contenteditable="true">OPSYST1</h2>
 
       <p class="editable" contenteditable="true">
-        What is a Kernel?
+        Process Management
       </p>
 
       <hr>
 
       <p class="editable" contenteditable="true">
-        The core part of the operating system.
+        Process management is how the operating system organizes and controls running programs so they work smoothly together.
       </p>
 
       <div class="buttons">
-        <label for="c1">Back</label>
-        <label for="c3">Next</label>
-        <a class="end" href="index.html">End</a>
+        <label for="c1">BACK</label>
+        <label for="c3">NEXT</label>
+        <a class="end" routerLink="/flashcards">END</a>
       </div>
     </div>
 
+   
     <div class="card card3">
       <h2 class="editable" contenteditable="true">OPSYST1</h2>
 
       <p class="editable" contenteditable="true">
-        What is Process Management?
+        Memory Management
       </p>
 
       <hr>
 
       <p class="editable" contenteditable="true">
-        Handles execution of processes in OS.
+       Memory management makes sure programs get the memory they need, and that unused memory is recycled for others.
       </p>
 
       <div class="buttons">
-        <label for="c2">Back</label>
-        <a class="end" href="fcards.html">End</a>
+        <label for="c2">BACK</label>
+        <label for="c4">NEXT</label>
+        <a class="end" routerLink="/flashcards">END</a>
+      </div>
+    </div>
+
+
+    <div class="card card4">
+      <h2 class="editable" contenteditable="true">OPSYST1</h2>
+
+      <p class="editable" contenteditable="true">
+        File Systems
+      </p>
+
+      <hr>
+
+      <p class="editable" contenteditable="true">
+         A file system is the “filing cabinet” of a computer, and distributed file systems are like shared cabinets that multiple computers can use together.
+      </p>
+
+      <div class="buttons">
+        <label for="c3">BACK</label>
+        <label for="c5">NEXT</label>
+        <a class="end" routerLink="/flashcards">END</a>
+      </div>
+    </div>
+
+
+    <div class="card card5">
+      <h2 class="editable" contenteditable="true">OPSYST1</h2>
+
+      <p class="editable" contenteditable="true">
+        Command Line Interface
+      </p>
+
+      <hr>
+
+      <p class="editable" contenteditable="true">
+        The CLI is a text-based tool that lets you talk directly to the computer by typing commands, making computing more interactive and efficient.
+      </p>
+
+      <div class="buttons">
+        <label for="c4">BACK</label>
+        <a class="end" routerLink="/flashcards">END</a>
       </div>
     </div>
 
