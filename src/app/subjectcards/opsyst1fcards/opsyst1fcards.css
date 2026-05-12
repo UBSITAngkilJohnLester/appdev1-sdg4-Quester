@@ -1,0 +1,43 @@
+.container {
+  width: 520px;
+  margin: 80px auto;
+}
+
+.card {
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  border: 2px solid #444;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button, a {
+  padding: 10px 16px;
+  margin: 5px;
+  background: #00a8cc;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+button:hover, a:hover {
+  background: #008da8;
+}
+
+.end {
+  background: #ff4d4d;
+}
+.end:hover {
+  background: #cc0000;
+}
+
+.title{
+    text-align: center;
+}

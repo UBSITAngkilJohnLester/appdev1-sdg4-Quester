@@ -1,6 +1,8 @@
+<div class="Title">
+  <h1>Custom Cards</h1>
+</div>
 <div class="container">
   <div class="card">
-
     <h2 class="editable" contenteditable="true">
       {{ cards[currentIndex].title }}
     </h2>
@@ -10,18 +12,11 @@
     </p>
 
     <div class="buttons">
-  <button (click)="prev()" [disabled]="currentIndex === 0">
-    BACK
-  </button>
+      <button (click)="prev()" [disabled]="currentIndex === 0">BACK</button>
 
-  <button (click)="next()" [disabled]="currentIndex === cards.length - 1">
-    NEXT
-  </button>
+      <button (click)="next()" [disabled]="currentIndex === cards.length - 1">NEXT</button>
 
-  <a class="end" routerLink="/flashcards">
-    END
-  </a>
-</div>
-
+      <a class="end" routerLink="/flashcards"> END </a>
+    </div>
   </div>
 </div>
