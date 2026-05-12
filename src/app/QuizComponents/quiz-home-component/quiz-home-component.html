@@ -22,4 +22,8 @@
         <button type="button" class="btn btn-primary btn-lg medium" [disabled]="!progress.opsystEasyDone" routerLink="/OpsystM">Medium</button>
         <button type="button" class="btn btn-primary btn-lg hard" [disabled]="!progress.opsystMediumDone" routerLink="/OpsystH">Hard</button>
     </div>
+
+    <button class="btn btn-danger" (click)="resetProgress()">
+        Reset Progress
+    </button>
 </div>
