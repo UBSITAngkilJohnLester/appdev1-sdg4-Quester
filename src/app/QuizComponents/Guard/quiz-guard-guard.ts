@@ -3,6 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const quizGuardGuard: CanActivateFn = (route, state) => {
  
+  //kicks user to the prev difficulty if conditions are not met
   const router = inject(Router);
   const progress = JSON.parse(localStorage.getItem('quizProgress') || '{}');
 

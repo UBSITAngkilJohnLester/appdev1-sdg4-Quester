@@ -12,14 +12,16 @@ import { Router, RouterLink } from '@angular/router';
 export class ESitnet1Component {
   constructor(private router: Router){}
 
-  mode: 'intro' | 'quiz' | 'result' = 'intro';
+  mode: 'intro' | 'quiz' | 'result' = 'intro'; //to distinguish where the user is
   score = 0;
   passingScore = 7;
 
   startQuiz() {
+    //starts the quiz
     this.mode = 'quiz';
   }
 
+  //allows the user to move to higher difficulty if he/she passed the quiz
   finishQuiz() {
     const progress = JSON.parse(localStorage.getItem('quizProgress') || '{}');
 
@@ -32,6 +34,7 @@ export class ESitnet1Component {
     this.mode = 'result';
   }
 
+  //all questions and options for the quiz
   questions = [
     {
       question: '1. What is a computer network?',
@@ -138,6 +141,7 @@ export class ESitnet1Component {
   selectedAnswers: number[] = new Array(this.questions.length).fill(-1);
   currentQuestionIndex = 0;
 
+  //score calculation
   calculateScore() {
     this.score = 0;
 
@@ -150,6 +154,8 @@ export class ESitnet1Component {
     console.log('Score:', this.score);
   }
 
+  //moves the quiz forward when button is clicked
+  //Ends it if there's no more questions, proceeds to score calculation
   nextQuestion() {
     if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;
