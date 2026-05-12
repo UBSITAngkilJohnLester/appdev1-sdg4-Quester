@@ -15,44 +15,29 @@ export class OPSYST1fcards {
   cards = [
     {
       title: 'OPSYST1',
-      subtitle: 'Introduction to Programming',
-      content: 'Programming = step-by-step instructions for computers.'
+      subtitle: 'Operating Systems',
+      content: 'The operating system is the “boss” that manages everything inside the computer and makes it possible for programs to work.'
     },
     {
       title: 'OPSYST1',
-      subtitle: 'Variables & Data Types',
-      content: 'A variable stores data; type defines what kind of data.'
+      subtitle: 'Process Management',
+      content: 'Process management is how the operating system organizes and controls running programs so they work smoothly together.'
     },
     {
       title: 'OPSYST1',
-      subtitle: 'Operators',
-      content: 'Tools for math, comparison, and logic.'
+      subtitle: 'Memory Management',
+      content: 'Memory management makes sure programs get the memory they need, and that unused memory is recycled for others.'
     },
     {
       title: 'OPSYST1',
-      subtitle: 'Control Structures',
-      content: 'Let programs make decisions based on conditions.'
+      subtitle: 'File Systems',
+      content: ' A file system is the “filing cabinet” of a computer, and distributed file systems are like shared cabinets that multiple computers can use together.'
     },
     {
       title: 'OPSYST1',
-      subtitle: 'Loops',
-      content: 'Repeat actions automatically instead of rewriting code.'
+      subtitle: 'Command Line Interface',
+      content: 'The CLI is a text-based tool that lets you talk directly to the computer by typing commands, making computing more interactive and efficient.'
     },
-    {
-      title: 'OPSYST1',
-      subtitle: 'Functions',
-      content: 'Reusable blocks of code you can call anytime.'
-    },
-    {
-      title: 'OPSYST1',
-      subtitle: 'Arrays',
-      content: 'A list of values stored in one variable.'
-    },
-    {
-      title: 'OPSYST1',
-      subtitle: 'Input & Output',
-      content: 'Input gets data, output shows results.'
-    }
   ];
 
   next() {
