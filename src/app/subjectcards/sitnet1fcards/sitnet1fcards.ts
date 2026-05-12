@@ -14,43 +14,28 @@ export class SITNET1fcards {
   cards = [
     {
       title: 'SITNET1',
-      subtitle: 'Introduction to Programming',
-      content: 'Programming = step-by-step instructions for computers.',
+      subtitle: 'Computer Networks',
+      content: 'A network is just computers and devices linked together so they can exchange data.',
     },
     {
       title: 'SITNET1',
-      subtitle: 'Variables & Data Types',
-      content: 'A variable stores data; type defines what kind of data.',
+      subtitle: 'Internet Protocol',
+      content: 'IP is the system that lets computers send data to each other across different networks, making the Internet possible.',
     },
     {
       title: 'SITNET1',
-      subtitle: 'Operators',
-      content: 'Tools for math, comparison, and logic.',
+      subtitle: 'OSI Model',
+      content: 'The OSI model is a guide that standardizes how computers connect and share data, making sure different systems can communicate smoothly.',
     },
     {
       title: 'SITNET1',
-      subtitle: 'Control Structures',
-      content: 'Let programs make decisions based on conditions.',
+      subtitle: 'Routers',
+      content: 'A router is a device that guides data between networks, making the Internet work.',
     },
     {
       title: 'SITNET1',
-      subtitle: 'Loops',
-      content: 'Repeat actions automatically instead of rewriting code.',
-    },
-    {
-      title: 'SITNET1',
-      subtitle: 'Functions',
-      content: 'Reusable blocks of code you can call anytime.',
-    },
-    {
-      title: 'SITNET1',
-      subtitle: 'Arrays',
-      content: 'A list of values stored in one variable.',
-    },
-    {
-      title: 'SITNET1',
-      subtitle: 'Input & Output',
-      content: 'Input gets data, output shows results.',
+      subtitle: 'Network Switches',
+      content: 'A switch is like a smart hub that makes sure data gets to the exact device it’s supposed to reach.',
     },
   ];
 
