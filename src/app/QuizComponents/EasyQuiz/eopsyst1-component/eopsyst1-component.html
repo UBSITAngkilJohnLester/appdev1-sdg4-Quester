@@ -1,3 +1,4 @@
+<!--Instructions page-->
 @if (mode === 'intro') {
   <form>
     <fieldset>
@@ -23,6 +24,7 @@
   </form>
 }
 
+<!--Quiz proper-->
 @if (mode === 'quiz') {
   <div class="quiz">
     <form>
@@ -60,6 +62,7 @@
   </div>
 }
 
+<!--Results-->
 @if (mode === 'result') {
   @if(score >= passingScore){
     <div class="quiz">
