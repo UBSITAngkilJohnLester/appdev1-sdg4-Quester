@@ -21,10 +21,11 @@ import { HSitnet1Component } from './QuizComponents/HardQuiz/hsitnet1-component/
 import { PageNotFound } from '../Components/page-not-found/page-not-found';
 import { quizGuardGuard } from './QuizComponents/Guard/quiz-guard-guard';
 import { Customfcards } from './customfcards/customfcards';
+
+import { confirmLeaveGuard } from './QuizComponents/Guard/quiz-guard-exit-guard';
 import { OPSYST1fcards } from './subjectcards/opsyst1fcards/opsyst1fcards';
 import { PROGIT1fcards } from './subjectcards/progit1fcards/progit1fcards';
 import { SITNET1fcards } from './subjectcards/sitnet1fcards/sitnet1fcards';
-import { confirmLeaveGuard } from './QuizComponents/Guard/quiz-guard-exit-guard';
 
 export const routes: Routes = [
     // Default
@@ -60,7 +61,7 @@ export const routes: Routes = [
     {path: 'SitnetE', component: ESitnet1Component, canDeactivate: [confirmLeaveGuard]},
     {path: 'SitnetM', component: MSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetEasyDone', redirect: '/SitnetE' }, canDeactivate: [confirmLeaveGuard]},
     {path: 'SitnetH', component: HSitnet1Component, canActivate: [quizGuardGuard], data: { required: 'sitnetMediumDone', redirect: '/SitnetM' }, canDeactivate: [confirmLeaveGuard]},
-    
+
     //FlashCards
     {path: 'customfcards', component: Customfcards},
     {path: 'opsyst1fcards', component: OPSYST1fcards},

@@ -1,231 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>OPSYST1 Flashcards</title>
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #9ec9d9;
-}
-
-input {
-  display: none;
-}
-
-.container {
-  position: relative;
-  width: 520px;
-}
-
-.cards {
-  position: relative;
-  height: 300px;
-}
-
-.card {
-  width: 100%;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 15px;
-  border: 2px solid #444;
-  text-align: center;
-  font-size: 20px;
-  position: absolute;
-  opacity: 0;
-  transition: 0.4s ease;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-#c1:checked ~ .cards .card1,
-#c2:checked ~ .cards .card2,
-#c3:checked ~ .cards .card3,
-#c4:checked ~ .cards .card4,
-#c5:checked ~ .cards .card5 {
-  opacity: 1;
-  position: relative;
-}
-
-h2 {
-  margin-bottom: 15px;
-}
-
-hr {
-  margin: 15px 0;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-a, label {
-  text-decoration: none;
-  padding: 10px 18px;
-  margin: 5px;
-  background: #00a8cc;
-  color: black;
-  border-radius: 8px;
-  border: 2px solid #333;
-  display: inline-block;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-a:hover, label:hover {
-  background: #008da8;
-  transform: scale(1.05);
-}
-
-.end {
-  background: #ff4d4d;
-}
-
-.end:hover {
-  background: #cc0000;
-}
-
-.editable {
-  outline: none;
-  cursor: text;
-  padding: 5px;
-}
-
-.editable:focus {
-  outline: 2px solid #00a8cc;
-  background: #f0fbff;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <input type="radio" name="card" id="c1" checked>
-  <input type="radio" name="card" id="c2">
-  <input type="radio" name="card" id="c3">
-  <input type="radio" name="card" id="c4">
-  <input type="radio" name="card" id="c5">
-
-  <div class="cards">
-
-   
-    <div class="card card1">
-      <h2 class="editable" contenteditable="true">OPSYST1</h2>
-
-      <p class="editable" contenteditable="true">
-        Computer Networks
-      </p>
-
-      <hr>
-
-      <p class="editable" contenteditable="true">
-        A network is just computers and devices linked together so they can exchange data.
-      </p>
-
-      <div class="buttons">
-        <label for="c2">NEXT</label>
-        <a class="end" routerLink="/flashcards">END</a>
-      </div>
-    </div>
-
-  
-    <div class="card card2">
-      <h2 class="editable" contenteditable="true">OPSYST1</h2>
-
-      <p class="editable" contenteditable="true">
-        Internet Protocol
-      </p>
-
-      <hr>
-
-      <p class="editable" contenteditable="true">
-        IP is the system that lets computers send data to each other across different networks, making the Internet possible.
-      </p>
-
-      <div class="buttons">
-        <label for="c1">BACK</label>
-        <label for="c3">NEXT</label>
-        <a class="end" routerLink="/flashcards">END</a>
-      </div>
-    </div>
-
-   
-    <div class="card card3">
-      <h2 class="editable" contenteditable="true">OPSYST1</h2>
-
-      <p class="editable" contenteditable="true">
-        OSI Model
-      </p>
-
-      <hr>
-
-      <p class="editable" contenteditable="true">
-        The OSI model is a guide that standardizes how computers connect and share data, making sure different systems can communicate smoothly.
-      </p>
-
-      <div class="buttons">
-        <label for="c2">BACK</label>
-        <label for="c4">NEXT</label>
-        <a class="end" routerLink="/flashcards">END</a>
-      </div>
-    </div>
-
-
-    <div class="card card4">
-      <h2 class="editable" contenteditable="true">OPSYST1</h2>
-
-      <p class="editable" contenteditable="true">
-        Routers
-      </p>
-
-      <hr>
-
-      <p class="editable" contenteditable="true">
-        A router is a device that guides data between networks, making the Internet work.
-      </p>
-
-      <div class="buttons">
-        <label for="c3">BACK</label>
-        <label for="c5">NEXT</label>
-        <a class="end" routerLink="/flashcards">END</a>
-      </div>
-    </div>
-
-  
-    <div class="card card5">
-      <h2 class="editable" contenteditable="true">OPSYST1</h2>
-
-      <p class="editable" contenteditable="true">
-        Network Switches
-      </p>
-
-      <hr>
-
-      <p class="editable" contenteditable="true">
-        A switch is like a smart hub that makes sure data gets to the exact device it’s supposed to reach.
-      </p>
-
-      <div class="buttons">
-        <label for="c4">BACK</label>
-        <a class="end" routerLink="/flashcards">END</a>
-      </div>
-    </div>
-
-  </div>
-
+<div class="title">
+  <h1>Operating Systems</h1>
 </div>
+<div class="container" *ngIf="cards.length">
+  <div class="card">
 
-</body>
-</html>
+    <h2 contenteditable="true">{{ cards[currentIndex].title }}</h2>
+
+    <h3 contenteditable="true">{{ cards[currentIndex].subtitle }}</h3>
+
+    <p contenteditable="true">
+      {{ cards[currentIndex].content }}
+    </p>
+
+    <div class="buttons">
+
+      <button (click)="prev()" [disabled]="currentIndex === 0">
+        BACK
+      </button>
+
+      <button 
+        *ngIf="currentIndex < cards.length - 1"
+        (click)="next()">
+        NEXT
+      </button>
+
+      <a 
+        *ngIf="currentIndex === cards.length - 1"
+        routerLink="/flashcards"
+        class="end">
+        END
+      </a>
+
+    </div>
+  </div>
+</div>

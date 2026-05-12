@@ -7,27 +7,24 @@
 
 /* Page layout */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #9ec9d9;
 }
 
 /* Container */
 .container {
   width: 520px;
-  margin: auto;
+  margin: 20px auto 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  min-height: auto;
 }
 
 /* Card */
 .card {
-  position: relative;
   width: 100%;
   background: #ffffff;
   padding: 30px;
@@ -37,6 +34,7 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   z-index: 1;
+  margin-top: 0;
 }
 
 /* Editable text */
@@ -100,3 +98,6 @@ button:disabled {
   background: #cc0000;
 }
 
+.Title{
+    text-align: center;
+}
