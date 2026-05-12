@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { quizGuardGuard } from './quiz-guard-guard';
+import { quizGuardExitGuard } from './quiz-guard-exit-guard';
 
-describe('quizGuardGuard', () => {
+describe('quizGuardExitGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) =>
-    TestBed.runInInjectionContext(() => quizGuardGuard(...guardParameters));
+    TestBed.runInInjectionContext(() => quizGuardExitGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
