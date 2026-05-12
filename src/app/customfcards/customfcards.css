@@ -1,0 +1,102 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page layout */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #9ec9d9;
+}
+
+/* Container */
+.container {
+  width: 520px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card */
+.card {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #444;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Editable text */
+.editable {
+  outline: none;
+  cursor: text;
+  padding: 8px;
+  pointer-events: auto;
+}
+
+h2.editable {
+  margin-bottom: 15px;
+}
+
+p.editable {
+  font-size: 18px;
+}
+
+.editable:focus {
+  outline: 2px solid #00a8cc;
+  background: #f0fbff;
+}
+
+/* Buttons */
+.buttons {
+  position: relative;
+  z-index: 999;
+  margin-top: 20px;
+}
+
+button,
+a {
+  text-decoration: none;
+  padding: 10px 18px;
+  margin: 5px;
+  background: #00a8cc;
+  color: black;
+  border-radius: 8px;
+  border: 2px solid #333;
+  cursor: pointer;
+}
+
+/* Hover */
+button:hover,
+a:hover {
+  background: #008da8;
+}
+
+/* Disabled button */
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* End button */
+.end {
+  background: #ff4d4d;
+}
+
+.end:hover {
+  background: #cc0000;
+}
+
